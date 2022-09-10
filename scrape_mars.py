@@ -13,11 +13,10 @@ table_url = 'https://galaxyfacts-mars.com/'
 hemispheres_url = 'https://marshemispheres.com/'
 
 
-executable_path = {'executable_path': ChromeDriverManager().install()}
-browser = Browser('chrome', **executable_path, headless=False)
-
-
 def scrape():
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
+
     # News URL
     browser.visit(news_url)
     time.sleep(1)
@@ -80,7 +79,11 @@ def scrape():
 
     browser.quit()
 
+    listings = {}
+    listings['news_title'] = news_title
+    listings['news_p'] = news_p
+    listings['featured_img_url'] = featured_image_url
+    listings['hemisphere_img_url'] = hemisphere_image_urls
 
 
-
-    return news_title, news_p, featured_image_url, hemisphere_image_urls
+    return listings
