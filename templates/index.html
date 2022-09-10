@@ -25,71 +25,30 @@
         </p>
       </div>
     </div>
+    <!-- Inserting Latest News -->
+    <!-- The HTML code below only run if we have values to read from MongoDB database -->
+    {% if collections %}
+
     <h2><strong>Latest Mars News</strong></h2>
     <h5><strong>{{collections.news_title}}</strong></h5>
     <p>{{collections.news_p}}</p>
+
+    <!-- Inserting Featured Mars Image -->
     <div class="row">
       <div class="col-lg-6 pe-5">
         <h2><strong>Featured Mars Image</strong></h2>
         <img src="{{collections.featured_img_url}}" alt="Featured Image" />
       </div>
 
+      <!-- Inserting Mars Facts table -->
       <div class="col-lg-4 ps-5">
         <h3><strong>Mars Facts</strong></h3>
-        <table border="1" class="table table-bordered">
-          <thead>
-            <tr style="text-align: left">
-              <th></th>
-              <th>Mars</th>
-              <th>Earth</th>
-            </tr>
-            <tr>
-              <th>Description</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Mars - Earth Comparison</th>
-              <td>Mars</td>
-              <td>Earth</td>
-            </tr>
-            <tr>
-              <th>Diameter:</th>
-              <td>6,779 km</td>
-              <td>12,742 km</td>
-            </tr>
-            <tr>
-              <th>Mass:</th>
-              <td>6.39 × 10^23 kg</td>
-              <td>5.97 × 10^24 kg</td>
-            </tr>
-            <tr>
-              <th>Moons:</th>
-              <td>2</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th>Distance from Sun:</th>
-              <td>227,943,824 km</td>
-              <td>149,598,262 km</td>
-            </tr>
-            <tr>
-              <th>Length of Year:</th>
-              <td>687 Earth days</td>
-              <td>365.24 days</td>
-            </tr>
-            <tr>
-              <th>Temperature:</th>
-              <td>-87 to -5 °C</td>
-              <td>-88 to 58°C</td>
-            </tr>
-          </tbody>
-        </table>
+        {{collections.table|safe}}
       </div>
     </div>
     <br />
+
+    <!-- Inseting Mars Hemisphere image and title -->
     <h2 class="text-center pt-5"><strong>Mars Hemisphere</strong></h2>
     <hr />
 
@@ -99,7 +58,7 @@
           <img
             src="{{collections.hemisphere_img_url[0].img_url}}"
             class="card-img-top"
-            alt="..."
+            alt="Cerberus Hemisphere Enhanced"
           />
           <div class="card-body">
             <p class="card-text">
@@ -113,7 +72,7 @@
           <img
             src="{{collections.hemisphere_img_url[1].img_url}}"
             class="card-img-top"
-            alt="..."
+            alt="Schiaparelli Hemisphere Enhanced"
           />
           <div class="card-body">
             <p class="card-text">
@@ -127,7 +86,7 @@
           <img
             src="{{collections.hemisphere_img_url[2].img_url}}"
             class="card-img-top"
-            alt="..."
+            alt="Syrtis Major Hemisphere Enhanced"
           />
           <div class="card-body">
             <p class="card-text">
@@ -141,7 +100,7 @@
           <img
             src="{{collections.hemisphere_img_url[3].img_url}}"
             class="card-img-top"
-            alt="..."
+            alt="Valles Marineris Hemisphere Enhanced"
           />
           <div class="card-body">
             <p class="card-text">
@@ -151,5 +110,7 @@
         </div>
       </div>
     </div>
+
+    {% endif %}
   </body>
 </html>

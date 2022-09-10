@@ -15,7 +15,7 @@ hemispheres_url = 'https://marshemispheres.com/'
 
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
 
     # News URL
     browser.visit(news_url)
@@ -43,7 +43,7 @@ def scrape():
     # Table
     table = pd.read_html(table_url)
     table_df = table[0].rename({0:'Description', 1:table[0][1][0], 2:table[0][2][0]}, axis='columns').set_index('Description')
-    table_df.to_html('table.html')
+    html_table = table_df.to_html(justify='left', classes="table table-bordered")
 
 
     # Hemisphere
@@ -84,6 +84,7 @@ def scrape():
     listings['news_p'] = news_p
     listings['featured_img_url'] = featured_image_url
     listings['hemisphere_img_url'] = hemisphere_image_urls
+    listings['table'] = html_table
 
 
     return listings
