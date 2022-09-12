@@ -25,7 +25,7 @@ Firstly scraping websites using Jupyter Notebook, BeautifulSoup, Pandas, and Req
 
 * URL for the Featured Space Image site [here](https://spaceimages-mars.com).
 
-* Used Splinter to navigate the site and find the image URL for the current Featured Mars Image.
+* Used Splinter to navigate the site to find the image URL for the current Featured Mars Image.
 
 
 ### Mars Facts
