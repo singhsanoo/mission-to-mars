@@ -2,6 +2,8 @@
 
 This web application scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
+![html_page](127.0.0.1_5000_.png)
+
 ## Instructions 
 
 This project is divided into two main parts: 
