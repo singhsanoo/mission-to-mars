@@ -4,6 +4,13 @@ This web application scrapes various websites for data related to the Mission to
 
 ![html_page](127.0.0.1_5000_.png)
 
+# Tools
+* Javascript
+* Python
+* HTML/CSS
+* Bootstrap 5.2.0
+* MongoDB
+
 ## Instructions 
 
 This project is divided into two main parts: 
