@@ -10,6 +10,7 @@ This web application scrapes various websites for data related to the Mission to
 * HTML/CSS
 * Bootstrap 5.2.0
 * MongoDB
+* Flask
 
 ## Instructions 
 
